@@ -1,0 +1,16 @@
+# Specify the Docker Compose file format version. 3.8 is a good, modern choice.
+version: "3.8"
+
+# Define the 'services' or containers that make up your application.
+# We only have one service, which we'll call 'collector'.
+services:
+  ricoh-app-log-collector:
+    # This tells Docker Compose to build the image using the Dockerfile
+    # in the current directory ('.') instead of pulling a pre-built one.
+    build: .
+
+    # This is the equivalent of the '-v' flags in the 'docker run' command.
+    # It maps local paths on your host computer to paths inside the container.
+    volumes:
+      - ./config.json:/app/config.json
+      - ./downloaded_logs:/app/downloaded_logs

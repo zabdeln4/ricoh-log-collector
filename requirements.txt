@@ -1,0 +1,4 @@
+playwright
+pandas
+sqlalchemy
+mysql-connector-python
